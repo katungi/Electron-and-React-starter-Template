@@ -39,7 +39,7 @@ app.on("window-all-closed", () => {
     app.quit();
   }
 });
-
+ 
 app.on("activate", () => {
   // On maOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
@@ -47,6 +47,10 @@ app.on("activate", () => {
     createWindow();
   }
 });
+
+if (require("electron-squirrel-startup")) {
+    app.quit();
+  }
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
